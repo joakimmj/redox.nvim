@@ -20,6 +20,17 @@ local redox = {
   hint = "#98C3B1",
   cursor = "#FFD7A0",
   selection = "#3F4A4A",
+  cursor_line = "#323838",
+  operator = "#C9D4D2",
+  field = "#CFE3DE",
+  variable_builtin = "#E6D4A3",
+  dim = "#4A5353",
+  diff_add = "#33403B",
+  diff_change = "#403F30",
+  diff_delete = "#4A3333",
+  diff_add_fg = "#449dab",
+  diff_change_fg = "#6183bb",
+  diff_delete_fg = "#914c54",
   terminal = {
     black = "#2E3434",
     red = "#C26E63",
@@ -68,7 +79,7 @@ end
 local function set_colors()
   local colors = color_scheme[options.style]
   vim.api.nvim_set_hl(0, "LineNr", { fg = colors.subtle, bg = "NONE" })
-  vim.api.nvim_set_hl(0, "CursorLine", { bg = "#323838" })
+  vim.api.nvim_set_hl(0, "CursorLine", { bg = colors.cursor_line })
   vim.api.nvim_set_hl(0, "CursorColumn", { link = "CursorLine" })
   vim.api.nvim_set_hl(0, "ColorColumn", { link = "CursorLine" })
   vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.orange, bold = true })
@@ -113,11 +124,11 @@ local function set_colors()
   vim.api.nvim_set_hl(0, "@string", { fg = colors.sea })
   vim.api.nvim_set_hl(0, "@number", { link = "@constant" })
   vim.api.nvim_set_hl(0, "@boolean", { link = "@constant" })
-  vim.api.nvim_set_hl(0, "@operator", { fg = "#C9D4D2" })
-  vim.api.nvim_set_hl(0, "@field", { fg = "#CFE3DE" })
+  vim.api.nvim_set_hl(0, "@operator", { fg = colors.operator })
+  vim.api.nvim_set_hl(0, "@field", { fg = colors.field })
   vim.api.nvim_set_hl(0, "@property", { link = "@field" })
   vim.api.nvim_set_hl(0, "@variable", { fg = colors.fg })
-  vim.api.nvim_set_hl(0, "@variable.builtin", { fg = "#E6D4A3" })
+  vim.api.nvim_set_hl(0, "@variable.builtin", { fg = colors.variable_builtin })
   vim.api.nvim_set_hl(0, "@variable.member", { link = "@type.builtin" })
   vim.api.nvim_set_hl(0, "@attribute", { link = "@function" })
   vim.api.nvim_set_hl(0, "@markup.heading", { fg = colors.orange, bold = true })
@@ -139,7 +150,7 @@ local function set_colors()
   vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { undercurl = true, sp = colors.warn })
   vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { undercurl = true, sp = colors.info })
   vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { undercurl = true, sp = colors.hint })
-  vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", { fg = "#4A5353" })
+  vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", { fg = colors.dim })
   vim.api.nvim_set_hl(0, "LspInlayHint", { fg = colors.subtle, bg = colors.bg_alt, italic = true })
   vim.api.nvim_set_hl(0, "LspReferenceText", { bg = colors.bg_alt })
   vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = colors.bg_alt })
@@ -147,15 +158,15 @@ local function set_colors()
   vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = colors.selection, bold = true })
   vim.api.nvim_set_hl(0, "LspCodeLens", { fg = colors.subtle })
   vim.api.nvim_set_hl(0, "LspInfoBorder", { fg = colors.overlay, bg = colors.bg_alt })
-  vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#33403B" })
-  vim.api.nvim_set_hl(0, "DiffChange", { bg = "#403F30" })
-  vim.api.nvim_set_hl(0, "DiffDelete", { bg = "#4A3333" })
+  vim.api.nvim_set_hl(0, "DiffAdd", { bg = colors.diff_add })
+  vim.api.nvim_set_hl(0, "DiffChange", { bg = colors.diff_change })
+  vim.api.nvim_set_hl(0, "DiffDelete", { bg = colors.diff_delete })
   vim.api.nvim_set_hl(0, "DiffText", { bg = colors.orange })
-  vim.api.nvim_set_hl(0, "diffAdded", { bg = "#33403B", fg = "#449dab" })
-  vim.api.nvim_set_hl(0, "diffRemoved", { bg = "#4A3333", fg = "#914c54" })
-  vim.api.nvim_set_hl(0, "diffChanged", { bg = "#403F30", fg = "#6183bb" })
-  vim.api.nvim_set_hl(0, "diffOldFile", { fg = colors.orange, bg = "#4A3333" })
-  vim.api.nvim_set_hl(0, "diffNewFile", { fg = colors.orange, bg = "#33403B" })
+  vim.api.nvim_set_hl(0, "diffAdded", { bg = colors.diff_add, fg = colors.diff_add_fg })
+  vim.api.nvim_set_hl(0, "diffRemoved", { bg = colors.diff_delete, fg = colors.diff_delete_fg })
+  vim.api.nvim_set_hl(0, "diffChanged", { bg = colors.diff_change, fg = colors.diff_change_fg })
+  vim.api.nvim_set_hl(0, "diffOldFile", { fg = colors.orange, bg = colors.diff_delete })
+  vim.api.nvim_set_hl(0, "diffNewFile", { fg = colors.orange, bg = colors.diff_add })
   vim.api.nvim_set_hl(0, "diffFile", { fg = colors.teal })
   vim.api.nvim_set_hl(0, "diffLine", { fg = colors.subtle })
   vim.api.nvim_set_hl(0, "diffIndexLine", { fg = colors.cyan })
@@ -192,15 +203,15 @@ local function set_colors()
   vim.api.nvim_set_hl(0, "@lsp.type.modifier", { link = "@keyword" })
   vim.api.nvim_set_hl(0, "@lsp.type.comment", { link = "@comment" })
   vim.api.nvim_set_hl(0, "@lsp.type.regexp", { link = "@string" })
-  vim.api.nvim_set_hl(0, "@lsp.type.decorator", { fg = "#E6D4A3", italic = true })
+  vim.api.nvim_set_hl(0, "@lsp.type.decorator", { fg = colors.variable_builtin, italic = true })
   vim.api.nvim_set_hl(0, "@lsp.type.builtinType", { link = "@type.builtin" })
   vim.api.nvim_set_hl(0, "@lsp.type.selfKeyword", { link = "@variable.builtin" })
   vim.api.nvim_set_hl(0, "@lsp.type.null", { link = "@constant" })
   vim.api.nvim_set_hl(0, "@lsp.mod.deprecated", { strikethrough = true })
-  vim.api.nvim_set_hl(0, "@lsp.mod.readonly", { underline = true, sp = "#4A5353" })
+  vim.api.nvim_set_hl(0, "@lsp.mod.readonly", { underline = true, sp = colors.dim })
   vim.api.nvim_set_hl(0, "@lsp.mod.static", { italic = true })
   vim.api.nvim_set_hl(0, "@lsp.mod.abstract", { italic = true })
-  vim.api.nvim_set_hl(0, "@lsp.mod.unused", { fg = "#4A5353" })
+  vim.api.nvim_set_hl(0, "@lsp.mod.unused", { fg = colors.dim })
   vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary", { link = "@variable.builtin" })
 end
 
