@@ -1,0 +1,62 @@
+-- redox — WezTerm color schemes (dark + light)
+-- Paste into your wezterm.lua config_builder block, then set:
+--   config.color_scheme = "redox"         -- dark
+--   config.color_scheme = "redox-light"   -- light
+
+config.color_schemes = {
+  ["redox"] = {
+    foreground    = "#DCE8E5",
+    background    = "#2E3434",
+    cursor_bg     = "#FFD7A0",
+    cursor_fg     = "#2E3434",
+    cursor_border = "#FFD7A0",
+    selection_bg  = "#3F4A4A",
+    selection_fg  = "#DCE8E5",
+    scrollbar_thumb = "#3A4141",
+    split           = "#3A4141",
+    ansi = {
+      "#2E3434", "#C26E63", "#7FB8A4", "#D6C38A",
+      "#6FAFBD", "#B28FA3", "#8FC7B7", "#DCE8E5",
+    },
+    brights = {
+      "#4A5353", "#E08A7F", "#A9D6C6", "#EBD9A8",
+      "#92CAD4", "#D3ABC0", "#B6E3D5", "#F1F6F4",
+    },
+    tab_bar = {
+      background       = "#2E3434",
+      active_tab       = { bg_color = "#3A4141", fg_color = "#DCE8E5", intensity = "Bold" },
+      inactive_tab     = { bg_color = "#2E3434", fg_color = "#919D9B" },
+      inactive_tab_hover = { bg_color = "#343A3A", fg_color = "#DCE8E5" },
+      new_tab          = { bg_color = "#2E3434", fg_color = "#919D9B" },
+      new_tab_hover    = { bg_color = "#343A3A", fg_color = "#DCE8E5" },
+    },
+  },
+
+  ["redox-light"] = {
+    foreground    = "#1C2B29",
+    background    = "#E4EDE9",
+    cursor_bg     = "#3D2A00",
+    cursor_fg     = "#E4EDE9",
+    cursor_border = "#3D2A00",
+    selection_bg  = "#B2C4BF",
+    selection_fg  = "#1C2B29",
+    scrollbar_thumb = "#CAD7D1",
+    split           = "#CAD7D1",
+    ansi = {
+      "#1C2B29", "#7A2828", "#1E6B58", "#7A5618",
+      "#2A5A88", "#6A3A6A", "#1E6A62", "#E4EDE9",
+    },
+    brights = {
+      "#3A5450", "#923030", "#258C72", "#926A1E",
+      "#3A6A9A", "#7A4A7A", "#267A72", "#FFFFFF",
+    },
+    tab_bar = {
+      background       = "#E4EDE9",
+      active_tab       = { bg_color = "#CAD7D1", fg_color = "#1C2B29", intensity = "Bold" },
+      inactive_tab     = { bg_color = "#E4EDE9", fg_color = "#526C68" },
+      inactive_tab_hover = { bg_color = "#D8E4DF", fg_color = "#1C2B29" },
+      new_tab          = { bg_color = "#E4EDE9", fg_color = "#526C68" },
+      new_tab_hover    = { bg_color = "#D8E4DF", fg_color = "#1C2B29" },
+    },
+  },
+}

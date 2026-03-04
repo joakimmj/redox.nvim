@@ -75,6 +75,13 @@ Call `get_colors()` **after** `setup()` (or after loading the colorscheme via
 
 ---
 
+## Extras
+
+Ready-made theme files for various tools live in [`extras/`](./extras/).
+See [`extras/README.md`](./extras/README.md) for the full list and installation instructions.
+
+---
+
 ## `redox` (dark)
 
 ![color palette](./assets/redox-color-palette.png)

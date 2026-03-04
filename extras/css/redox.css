@@ -1,0 +1,49 @@
+/* redox — CSS theme (dark)
+ * Usage: import or link this file, then use the custom properties in your CSS.
+ *
+ *   @import url("redox.css");
+ *
+ *   body {
+ *     background-color: var(--redox-bg);
+ *     color: var(--redox-fg);
+ *   }
+ */
+
+:root {
+  /* ── Backgrounds ─────────────────────────────────────────────────── */
+  --redox-bg:          #2E3434;
+  --redox-bg-alt:      #343A3A;
+  --redox-surface:     #3A4141;
+  --redox-overlay:     #414949;
+  --redox-selection:   #3F4A4A;
+  --redox-cursor-line: #323838;
+
+  /* ── Foregrounds ─────────────────────────────────────────────────── */
+  --redox-fg:     #DCE8E5;
+  --redox-muted:  #AFC3BE;
+  --redox-subtle: #919D9B;
+  --redox-dim:    #4A5353;
+
+  /* ── Accents ─────────────────────────────────────────────────────── */
+  --redox-rust:   #CD8B64;
+  --redox-orange: #E3A36F;
+  --redox-teal:   #7EC1AE;
+  --redox-sea:    #9FD8C4;
+  --redox-cyan:   #8FC7B7;
+  --redox-amber:  #D6C38A;
+  --redox-red:    #CD8980;
+
+  /* ── Semantic ─────────────────────────────────────────────────────── */
+  --redox-warn:   #E3B86F;
+  --redox-info:   #8EC6C4;
+  --redox-hint:   #98C3B1;
+  --redox-cursor: #FFD7A0;
+
+  /* ── Diffs ───────────────────────────────────────────────────────── */
+  --redox-diff-add:       #33403B;
+  --redox-diff-change:    #403F30;
+  --redox-diff-delete:    #4A3333;
+  --redox-diff-add-fg:    #9FD8C4;
+  --redox-diff-change-fg: #D6C38A;
+  --redox-diff-delete-fg: #CD8980;
+}

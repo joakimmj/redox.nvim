@@ -1,0 +1,106 @@
+# redox-light — Yazi theme (light)
+# Place at ~/.config/yazi/theme.toml (or flavors/redox-light.toml)
+
+[manager]
+cwd = { fg = "#247068" }
+
+hovered         = { fg = "#E4EDE9", bg = "#8A4F18" }
+preview_hovered = { underline = true }
+
+find_keyword         = { fg = "#8A4F18", italic = true }
+find_hidden_keyword  = { fg = "#8A4F18", italic = true }
+
+marker_selected = { fg = "#247068", bg = "#247068" }
+marker_to_copy  = { fg = "#7A5E18", bg = "#7A5E18" }
+marker_to_cut   = { fg = "#8B3530", bg = "#8B3530" }
+marker_copied   = { fg = "#7A5E18", bg = "#7A5E18" }
+marker_cut      = { fg = "#8B3530", bg = "#8B3530" }
+
+tab_active   = { reversed = true }
+tab_inactive = {}
+tab_width    = 1
+
+count_copied = { fg = "#E4EDE9", bg = "#7A5E18" }
+count_cut    = { fg = "#E4EDE9", bg = "#8B3530" }
+
+border_symbol = "│"
+border_style  = { fg = "#B4C5BF" }
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "#CAD7D1", bg = "#CAD7D1" }
+
+mode_normal = { fg = "#E4EDE9", bg = "#247068", bold = true }
+mode_select = { fg = "#E4EDE9", bg = "#8A4F18", bold = true }
+mode_unset  = { fg = "#E4EDE9", bg = "#8B3530", bold = true }
+
+progress_label  = { bold = true }
+progress_normal = { fg = "#247068", bg = "#CAD7D1" }
+progress_error  = { fg = "#8B3530", bg = "#CAD7D1" }
+
+perm_type  = { fg = "#247068" }
+perm_read  = { fg = "#7A5E18" }
+perm_write = { fg = "#8B3530" }
+perm_exec  = { fg = "#226858" }
+perm_sep   = { fg = "#B4C5BF" }
+
+[input]
+cursor   = { reversed = true }
+title    = { fg = "#8A4F18", bold = true }
+value    = { fg = "#1C2B29" }
+selected = { reversed = true }
+
+[completion]
+border   = { fg = "#B4C5BF", bg = "#D8E4DF" }
+active   = { bg = "#CAD7D1" }
+inactive = {}
+
+[tasks]
+border  = { fg = "#B4C5BF", bg = "#E4EDE9" }
+title   = { bold = true }
+hovered = { underline = true }
+
+[which]
+mask            = { bg = "#E4EDE9" }
+cand            = { fg = "#247068" }
+rest            = { fg = "#526C68" }
+desc            = { fg = "#8A4F18" }
+separator       = "  "
+separator_style = { fg = "#B4C5BF" }
+
+[notify]
+title_info  = { fg = "#247068" }
+title_warn  = { fg = "#7A5618" }
+title_error = { fg = "#8B3530" }
+
+[spot]
+border = { fg = "#B4C5BF", bg = "#D8E4DF" }
+title  = { fg = "#8A4F18", bold = true }
+
+[confirm]
+border  = { fg = "#B4C5BF", bg = "#E4EDE9" }
+title   = { fg = "#8A4F18", bold = true }
+btn_yes = { reversed = true }
+btn_no  = {}
+
+[help]
+on      = { fg = "#8A4F18" }
+run     = { fg = "#247068" }
+desc    = { fg = "#526C68" }
+hovered = { bg = "#CAD7D1", bold = true }
+footer  = { fg = "#E4EDE9", bg = "#247068" }
+
+[filetype]
+rules = [
+  { mime = "image/*",                     fg = "#247068" },
+  { mime = "video/*",                     fg = "#8A4F18" },
+  { mime = "audio/*",                     fg = "#8A4F18" },
+  { mime = "application/zip",             fg = "#7A5E18" },
+  { mime = "application/gzip",            fg = "#7A5E18" },
+  { mime = "application/x-tar",           fg = "#7A5E18" },
+  { mime = "application/x-bzip2",         fg = "#7A5E18" },
+  { mime = "application/x-7z-compressed", fg = "#7A5E18" },
+  { mime = "application/x-rar",           fg = "#7A5E18" },
+  { mime = "inode/directory",             fg = "#247068" },
+]

@@ -1,0 +1,105 @@
+/* redox-theme.css — combined dark + light theme
+ *
+ * Defaults to dark. Respects the OS preference via prefers-color-scheme.
+ * A [data-theme] attribute on <html> always overrides the OS setting.
+ *
+ * Usage:
+ *   <link rel="stylesheet" href="redox-theme.css">
+ *
+ * Manual toggle:
+ *   document.documentElement.dataset.theme = "light"; // or "dark"
+ *
+ * Persist across page loads (add before </head>, no defer):
+ *   <script>
+ *     const t = localStorage.getItem("redox-theme");
+ *     if (t) document.documentElement.dataset.theme = t;
+ *   </script>
+ */
+
+/* ── Dark (default) ──────────────────────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Backgrounds */
+  --redox-bg:          #2E3434;
+  --redox-bg-alt:      #343A3A;
+  --redox-surface:     #3A4141;
+  --redox-overlay:     #414949;
+  --redox-selection:   #3F4A4A;
+  --redox-cursor-line: #323838;
+
+  /* Foregrounds */
+  --redox-fg:     #DCE8E5;
+  --redox-muted:  #AFC3BE;
+  --redox-subtle: #919D9B;
+  --redox-dim:    #4A5353;
+
+  /* Accents */
+  --redox-rust:   #CD8B64;
+  --redox-orange: #E3A36F;
+  --redox-teal:   #7EC1AE;
+  --redox-sea:    #9FD8C4;
+  --redox-cyan:   #8FC7B7;
+  --redox-amber:  #D6C38A;
+  --redox-red:    #CD8980;
+
+  /* Semantic */
+  --redox-warn:   #E3B86F;
+  --redox-info:   #8EC6C4;
+  --redox-hint:   #98C3B1;
+  --redox-cursor: #FFD7A0;
+
+  /* Diffs */
+  --redox-diff-add:       #33403B;
+  --redox-diff-change:    #403F30;
+  --redox-diff-delete:    #4A3333;
+  --redox-diff-add-fg:    #9FD8C4;
+  --redox-diff-change-fg: #D6C38A;
+  --redox-diff-delete-fg: #CD8980;
+}
+
+/* ── Light ───────────────────────────────────────────────────────────────── */
+[data-theme="light"],
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+
+    /* Backgrounds */
+    --redox-bg:          #E4EDE9;
+    --redox-bg-alt:      #D8E4DF;
+    --redox-surface:     #CAD7D1;
+    --redox-overlay:     #B4C5BF;
+    --redox-selection:   #B2C4BF;
+    --redox-cursor-line: #DCE8E3;
+
+    /* Foregrounds */
+    --redox-fg:     #1C2B29;
+    --redox-muted:  #3A5450;
+    --redox-subtle: #526C68;
+    --redox-dim:    #6E8280;
+
+    /* Accents */
+    --redox-rust:   #8B4820;
+    --redox-orange: #8A4F18;
+    --redox-teal:   #247068;
+    --redox-sea:    #226858;
+    --redox-cyan:   #267068;
+    --redox-amber:  #7A5E18;
+    --redox-red:    #8B3530;
+
+    /* Semantic */
+    --redox-warn:   #7A5618;
+    --redox-info:   #246A68;
+    --redox-hint:   #2E6A58;
+    --redox-cursor: #3D2A00;
+
+    /* Diffs */
+    --redox-diff-add:       #C8E0D5;
+    --redox-diff-change:    #DDD8B0;
+    --redox-diff-delete:    #E0C4C0;
+    --redox-diff-add-fg:    #226858;
+    --redox-diff-change-fg: #7A5E18;
+    --redox-diff-delete-fg: #8B3530;
+  }
+}
