@@ -9,9 +9,13 @@ local options = {
 	terminal_colors = false,
 }
 
+function M.get_colors()
+	return colors.get(options.style)
+end
+
 function M.toggle_transparency()
 	options.transparent = not options.transparent
-	highlights.set_transparency(colors.schemes[options.style], options.transparent)
+	highlights.set_transparency(M.get_colors(), options.transparent)
 end
 
 function M.setup(opts)
@@ -26,7 +30,7 @@ function M.setup(opts)
 		options.terminal_colors = opts.terminal_colors
 	end
 
-	local scheme = colors.schemes[options.style]
+	local scheme = M.get_colors()
 	if scheme == nil then
 		vim.notify("redox.nvim: invalid style '" .. options.style .. "'", vim.log.levels.ERROR)
 		return

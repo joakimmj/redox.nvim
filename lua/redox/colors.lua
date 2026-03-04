@@ -1,6 +1,6 @@
 local M = {}
 
-M.schemes = {
+local schemes = {
   redox = {
     bg = "#2E3434",
     bg_alt = "#343A3A",
@@ -103,5 +103,9 @@ M.schemes = {
     },
   },
 }
+
+function M.get(style)
+  return schemes[style]
+end
 
 return M

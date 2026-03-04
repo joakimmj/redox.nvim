@@ -55,6 +55,24 @@ To toggle transparency at runtime:
 require("redox").toggle_transparency()
 ```
 
+### Extending highlights
+
+`get_colors()` returns the active palette so you can reference the exact color
+tokens when overriding highlight groups in your own config:
+
+```lua
+require("redox").setup({ style = "redox-light" })
+
+local c = require("redox").get_colors()
+
+vim.api.nvim_set_hl(0, "WinBar",     { fg = c.muted, bg = c.surface })
+vim.api.nvim_set_hl(0, "WinBarNC",   { fg = c.subtle, bg = c.surface })
+vim.api.nvim_set_hl(0, "NeoTreeNormal", { fg = c.fg, bg = c.bg_alt })
+```
+
+Call `get_colors()` **after** `setup()` (or after loading the colorscheme via
+`:colorscheme`) so that the correct style is active.
+
 ---
 
 ## `redox` (dark)
