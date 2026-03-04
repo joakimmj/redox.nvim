@@ -51,8 +51,60 @@ local redox = {
   }
 }
 
+local redox_light = {
+  bg = "#E4EDE9",
+  bg_alt = "#D8E4DF",
+  surface = "#CAD7D1",
+  overlay = "#B4C5BF",
+  fg = "#1C2B29",
+  muted = "#3A5450",
+  subtle = "#526C68",
+  rust = "#8B4820",
+  orange = "#8A4F18",
+  teal = "#247068",
+  sea = "#226858",
+  cyan = "#267068",
+  amber = "#7A5E18",
+  red = "#8B3530",
+  warn = "#7A5618",
+  info = "#246A68",
+  hint = "#2E6A58",
+  cursor = "#3D2A00",
+  selection = "#B2C4BF",
+  cursor_line = "#DCE8E3",
+  operator = "#2E4540",
+  field = "#1E3C38",
+  variable_builtin = "#5C3E10",
+  dim = "#6E8280",
+  diff_add = "#C8E0D5",
+  diff_change = "#DDD8B0",
+  diff_delete = "#E0C4C0",
+  diff_add_fg = "#1A6B5A",
+  diff_change_fg = "#3B5A8B",
+  diff_delete_fg = "#7A2828",
+  terminal = {
+    black = "#1C2B29",
+    red = "#7A2828",
+    green = "#1E6B58",
+    yellow = "#7A5618",
+    blue = "#2A5A88",
+    magenta = "#6A3A6A",
+    cyan = "#1E6A62",
+    white = "#E4EDE9",
+    black_bright = "#3A5450",
+    red_bright = "#923030",
+    green_bright = "#258C72",
+    yellow_bright = "#926A1E",
+    blue_bright = "#3A6A9A",
+    magenta_bright = "#7A4A7A",
+    cyan_bright = "#267A72",
+    white_bright = "#FFFFFF",
+  }
+}
+
 local color_scheme = {
   redox = redox,
+  ["redox-light"] = redox_light,
 }
 
 local options = {
@@ -111,7 +163,10 @@ local function set_colors()
   vim.api.nvim_set_hl(0, "MoreMsg", { fg = colors.teal })
   vim.api.nvim_set_hl(0, "ErrorMsg", { link = "DiagnosticError" })
   vim.api.nvim_set_hl(0, "WarningMsg", { link = "DiagnosticWarn" })
-  vim.api.nvim_set_hl(0, "@comment", { fg = colors.subtle, italic = true })
+  vim.api.nvim_set_hl(0, "Comment", { fg = colors.subtle, italic = true })
+  vim.api.nvim_set_hl(0, "Constant", { fg = colors.amber })
+  vim.api.nvim_set_hl(0, "Question", { fg = colors.teal })
+  vim.api.nvim_set_hl(0, "@comment", { link = "Comment" })
   vim.api.nvim_set_hl(0, "Todo", { bg = colors.hint, fg = colors.bg, bold = true })
   vim.api.nvim_set_hl(0, "@comment.todo", { link = "Todo" })
   vim.api.nvim_set_hl(0, "@keyword", { fg = colors.orange, bold = true })
@@ -138,6 +193,20 @@ local function set_colors()
   vim.api.nvim_set_hl(0, "@markup.heading.4", { fg = colors.amber, bold = true })
   vim.api.nvim_set_hl(0, "@markup.heading.5", { fg = colors.cyan, bold = true })
   vim.api.nvim_set_hl(0, "@markup.heading.6", { fg = colors.sea, bold = true })
+  vim.api.nvim_set_hl(0, "@markup.raw", { fg = colors.sea })
+  vim.api.nvim_set_hl(0, "@markup.raw.inline", { link = "@markup.raw" })
+  vim.api.nvim_set_hl(0, "@markup.raw.block", { link = "@markup.raw" })
+  vim.api.nvim_set_hl(0, "@markup.quote", { fg = colors.muted, italic = true })
+  vim.api.nvim_set_hl(0, "@markup.list", { fg = colors.orange })
+  vim.api.nvim_set_hl(0, "@markup.list.checked", { fg = colors.teal })
+  vim.api.nvim_set_hl(0, "@markup.list.unchecked", { fg = colors.subtle })
+  vim.api.nvim_set_hl(0, "@markup.link", { fg = colors.teal, underline = true })
+  vim.api.nvim_set_hl(0, "@markup.link.url", { fg = colors.teal, underline = true })
+  vim.api.nvim_set_hl(0, "@markup.link.label", { fg = colors.teal })
+  vim.api.nvim_set_hl(0, "@markup.italic", { italic = true })
+  vim.api.nvim_set_hl(0, "@markup.strong", { bold = true })
+  vim.api.nvim_set_hl(0, "Special", { fg = colors.teal })
+  vim.api.nvim_set_hl(0, "@punctuation.special", { fg = colors.muted })
   vim.api.nvim_set_hl(0, "DiagnosticError", { fg = colors.red })
   vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = colors.warn })
   vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = colors.info })
@@ -252,6 +321,7 @@ function M.toggle_transparency()
 end
 
 function M.setup(opts)
+  opts = opts or {}
   if opts.style ~= nil then
     options.style = opts.style
   end
