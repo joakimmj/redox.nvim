@@ -7,6 +7,7 @@ Ready-made theme files for external tools. Source or copy only the variant you n
 | **tmux**    | [`tmux/redox.conf`](./tmux/redox.conf) · [`tmux/redox-light.conf`](./tmux/redox-light.conf) |
 | **WezTerm** | [`wezterm/redox.lua`](./wezterm/redox.lua) — both schemes in one file |
 | **fzf**     | [`fzf/redox.sh`](./fzf/redox.sh) · [`fzf/redox-light.sh`](./fzf/redox-light.sh) |
+| **Rofi**    | [`rofi/redox.rasi`](./rofi/redox.rasi) · [`rofi/redox-light.rasi`](./rofi/redox-light.rasi) |
 | **Yazi**    | [`yazi/redox.toml`](./yazi/redox.toml) · [`yazi/redox-light.toml`](./yazi/redox-light.toml) |
 | **Vim**     | [`vim/redox.vim`](./vim/redox.vim) · [`vim/redox-light.vim`](./vim/redox-light.vim) |
 | **CSS**     | [`css/redox.css`](./css/redox.css) · [`css/redox-light.css`](./css/redox-light.css) · [`css/redox-theme.css`](./css/redox-theme.css) (combined) |
@@ -37,6 +38,14 @@ config.color_scheme = "redox-light"  -- light
 source /path/to/extras/fzf/redox.sh        # dark
 # or
 source /path/to/extras/fzf/redox-light.sh  # light
+```
+
+## Rofi
+
+```sh
+rofi -show drun -theme /path/to/extras/rofi/redox.rasi        # dark
+# or
+rofi -show drun -theme /path/to/extras/rofi/redox-light.rasi  # light
 ```
 
 ## Yazi
