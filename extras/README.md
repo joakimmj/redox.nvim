@@ -2,18 +2,19 @@
 
 Ready-made theme files for external tools. Source or copy only the variant you need.
 
-| Tool        | Files |
-| ----------- | ----- |
-| **tmux**    | [`tmux/redox.conf`](./tmux/redox.conf) · [`tmux/redox-light.conf`](./tmux/redox-light.conf) |
-| **WezTerm** | [`wezterm/redox.lua`](./wezterm/redox.lua) — both schemes in one file |
-| **fzf**     | [`fzf/redox.sh`](./fzf/redox.sh) · [`fzf/redox-light.sh`](./fzf/redox-light.sh) |
-| **ls**      | [`ls/redox.sh`](./ls/redox.sh) · [`ls/redox-light.sh`](./ls/redox-light.sh) — `LS_COLORS` |
-| **less/man**| [`less/redox.sh`](./less/redox.sh) · [`less/redox-light.sh`](./less/redox-light.sh) — `LESS_TERMCAP` |
-| **bat**     | [`bat/redox.tmTheme`](./bat/redox.tmTheme) · [`bat/redox-light.tmTheme`](./bat/redox-light.tmTheme) — also works for `delta` |
-| **Rofi**    | [`rofi/redox.rasi`](./rofi/redox.rasi) · [`rofi/redox-light.rasi`](./rofi/redox-light.rasi) |
-| **Yazi**    | [`yazi/redox.toml`](./yazi/redox.toml) · [`yazi/redox-light.toml`](./yazi/redox-light.toml) |
-| **Vim**     | [`vim/redox.vim`](./vim/redox.vim) · [`vim/redox-light.vim`](./vim/redox-light.vim) |
-| **CSS**     | [`css/redox.css`](./css/redox.css) · [`css/redox-light.css`](./css/redox-light.css) · [`css/redox-theme.css`](./css/redox-theme.css) (combined) |
+| Tool            | Files |
+| --------------- | ----- |
+| **tmux**        | [`tmux/redox.conf`](./tmux/redox.conf) · [`tmux/redox-light.conf`](./tmux/redox-light.conf) |
+| **WezTerm**     | [`wezterm/redox.lua`](./wezterm/redox.lua) — both schemes in one file |
+| **fzf**         | [`fzf/redox.sh`](./fzf/redox.sh) · [`fzf/redox-light.sh`](./fzf/redox-light.sh) |
+| **ls**          | [`ls/redox.sh`](./ls/redox.sh) · [`ls/redox-light.sh`](./ls/redox-light.sh) — `LS_COLORS` |
+| **less/man**    | [`less/redox.sh`](./less/redox.sh) · [`less/redox-light.sh`](./less/redox-light.sh) — `LESS_TERMCAP` |
+| **bat**         | [`bat/redox.tmTheme`](./bat/redox.tmTheme) · [`bat/redox-light.tmTheme`](./bat/redox-light.tmTheme) — also works for `delta` |
+| **Rofi**        | [`rofi/redox.rasi`](./rofi/redox.rasi) · [`rofi/redox-light.rasi`](./rofi/redox-light.rasi) |
+| **Yazi**        | [`yazi/redox.toml`](./yazi/redox.toml) · [`yazi/redox-light.toml`](./yazi/redox-light.toml) |
+| **Vim**         | [`vim/redox.vim`](./vim/redox.vim) · [`vim/redox-light.vim`](./vim/redox-light.vim) |
+| **Claude Code** | [`claude/redox.json`](./claude/redox.json) · [`claude/redox-light.json`](./claude/redox-light.json) |
+| **CSS**         | [`css/redox.css`](./css/redox.css) · [`css/redox-light.css`](./css/redox-light.css) · [`css/redox-theme.css`](./css/redox-theme.css) (combined) |
 
 ## tmux
 
@@ -124,6 +125,27 @@ colorscheme redox        " dark
 " or
 colorscheme redox-light  " light
 ```
+
+## Claude Code
+
+Requires Claude Code v2.1.118+ (custom theme support).
+
+```sh
+mkdir -p ~/.claude/themes
+cp extras/claude/redox.json extras/claude/redox-light.json ~/.claude/themes/
+```
+
+Select with `/theme`, or set in `~/.claude/settings.json`:
+
+```json
+{ "theme": "custom:redox" }
+```
+
+Themes are hot-reloaded, but if `~/.claude/themes/` did not exist when Claude
+Code started you need to restart it once.
+
+Code-block syntax highlighting is not themeable — Claude Code renders it through
+a separate hardcoded subsystem.
 
 ## CSS
 
